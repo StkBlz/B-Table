@@ -1,2 +1,2 @@
 # BMS Table
-BLAZE TABLE
+https://stkblz.github.io/B-Table/
