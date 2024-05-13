@@ -1,5 +1,6 @@
 {
-"name" : "BLAZE",
-"symbol" : "B",
+"name" : "B TABLE",
+"symbol" : "🅱️",
+"compat_prefix": "B",
 "data_url" : "https://script.google.com/macros/s/AKfycbxH_Mj3ATHhnugnhk_tdMv5BwU8zXY6Lh-hK5cdQPFUb7gjlQ_ICPG8YkSmyH9yBYQT/exec"
 }
