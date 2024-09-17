@@ -29,13 +29,13 @@
         <div class="alert alert-success mb-3" role="alert">
             <p>Hey buddy, I think you've got the wrong door, the leather club's two blocks down. Fuck↗You↘ Oh, Fuck♂You leather man. Maybe you and I should settle it right here on the ring if you think your so tough. Oh yea? I'll kick your ass! Ha! Yeah right man. Let's go! Why don't you get out of that leather stuff? I'll strip down out of this and we'll settle it right here in the ring. What do you say? Yeah, no problem buddy! You got it. Get out of that uh, jabroni outfit. Yeah, smart ass. I'll show you who's the boss of this gym.</p>
             <hr>
-            <p>B-4 = ★1-★5 | B-3 = ★6-★10 |B-2 = ★11-★15 | B-1 = ★16-★19</p>
-            <p>B0 = ★20 | B1 = ★21 ...</p>
+            <p>B-4=★1-★5 | B-3=★6-★10 | B-2=★11-★15 | B-1=★16-★19</p>
+            <p>B0=★20 | B1=★21 | ...</p>
         </div>
 
         <!--ここから難易度表本体-->
         <div>
-            <table class="table table-light table-striped table-hover" id="table_int">
+            <table class="table table-light table-striped table-hover table-sm" id="table_int">
             </table>
         </div>
         <script language="javascript" type="text/javascript">
@@ -53,14 +53,16 @@
                 var count = 0;
                 var obj = $("#table_int");
 
+
                 obj.html("");
                 $("<thead class='table-dark'><tr><th>Level</th><th>Title</th><th>Artist</th>><th>Chart Viewer</th><th>Comment</th></tr></thead><tbody>")
                     .appendTo(obj);
                 var obj_sep = null;
+                
                 for (var i = 0; i < info.length; i++) {
                     if (x != info[i].level) {
                         if (obj_sep != null) {
-                            obj_sep.html("<td colspan='4'>" + "<b>" + mark + x + " (" + count +
+                            obj_sep.html("<td colspan='5'>" + "<b>" + mark + x + " (" + count +
                                 " Charts)</b></td>");
                         }
                         obj_sep = $("<tr class='table-dark' style='text-align:center' id='" + mark + info[i].level +
@@ -69,8 +71,8 @@
                         count = 0;
                         x = info[i].level;
                     }
-
                     var str = $("<tr></tr>");
+
 
                     // Level
                     $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
@@ -88,7 +90,7 @@
                     $("<td width='5%'>" +
                         "<a href='https://bms-score-viewer.pages.dev/view?md5=" + info[
                             i]
-                        .md5 + "' target='_blank'> </a></td>").appendTo(str);
+                        .md5 + "' target='_blank'>" + info[i].譜面確認 + "</a></td>").appendTo(str);
 
                     // Comment
                     $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
