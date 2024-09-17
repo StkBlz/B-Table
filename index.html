@@ -29,15 +29,9 @@
         <div class="alert alert-success mb-3" role="alert">
             <p>Hey buddy, I think you've got the wrong door, the leather club's two blocks down. Fuck↗You↘ Oh, Fuck♂You leather man. Maybe you and I should settle it right here on the ring if you think your so tough. Oh yea? I'll kick your ass! Ha! Yeah right man. Let's go! Why don't you get out of that leather stuff? I'll strip down out of this and we'll settle it right here in the ring. What do you say? Yeah, no problem buddy! You got it. Get out of that uh, jabroni outfit. Yeah, smart ass. I'll show you who's the boss of this gym.</p>
             <hr>
-            <p>🅱️-4 = ★1-★5</p>
-            <p>🅱️-3 = ★6-★10</p>
-            <p>🅱️-2 = ★11-★15</p>
-            <p>🅱️-1 = ★16-★19</p>
-            <p>🅱️0 = ★20</p>
-            <p>🅱️1 = ★21</p>
-            <p>etc.</p>
+            <p>B-4 = ★1-★5 | B-3 = ★6-★10 |B-2 = ★11-★15 | B-1 = ★16-★19</p>
+            <p>B0 = ★20 | B1 = ★21 ...</p>
         </div>
-
 
         <!--ここから難易度表本体-->
         <div>
@@ -60,7 +54,7 @@
                 var obj = $("#table_int");
 
                 obj.html("");
-                $("<thead class='table-dark'><tr><th>Level</th><th>Title</th><th>Artist</th><th>Comment</th></tr></thead><tbody>")
+                $("<thead class='table-dark'><tr><th>Level</th><th>Title</th><th>Artist</th>><th>Chart Viewer</th><th>Comment</th></tr></thead><tbody>")
                     .appendTo(obj);
                 var obj_sep = null;
                 for (var i = 0; i < info.length; i++) {
@@ -88,7 +82,13 @@
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
                     // Artist
-                    $("<td width='40%'>" + info[i].artist + "</td>").appendTo(str);
+                    $("<td width='35%'>" + info[i].artist + "</td>").appendTo(str);
+
+                    // Chartview
+                    $("<td width='5%'>" +
+                        "<a href='https://bms-score-viewer.pages.dev/view?md5=" + info[
+                            i]
+                        .md5 + "' target='_blank'> </a></td>").appendTo(str);
 
                     // Comment
                     $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
